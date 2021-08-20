@@ -453,11 +453,11 @@ const audi = 900;
 const bmw = 1200;
 const base = 900;
 const discount = 0.02;
-let fecha = new Date();
-let ano = fecha.getFullYear();
+let date = new Date();
+let year = date.getFullYear();
 
 const populateYears = () => {        
-        for (let i = ano; i >= 1970; i--) {
+        for (let i = year; i >= 1970; i--) {
                 selYear.innerHTML += `<option value="${i}"> ${i} </option>`
         }
 }
@@ -488,12 +488,12 @@ function costCalculator (captureYear, obtainBaseCost) {
         let totalDiscount = 0;
         let yearCounter = 0;
         let finalCost;      
-        console.log(`Año actual: ${ano}`)
+        console.log(`Año actual: ${year}`)
         console.log(`Año seleccionado: ${chosenYear}`)
-        if (chosenYear === ano) {
+        if (chosenYear === year) {
                 finalCost = baseCost;
         } else {                
-                for (let i = ano; i > chosenYear ; i--) {
+                for (let i = year; i > chosenYear ; i--) {
                         yearCounter += 1;
                         totalDiscount = discount * yearCounter;       
                 } 
