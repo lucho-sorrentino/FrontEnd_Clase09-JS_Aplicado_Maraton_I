@@ -452,6 +452,7 @@ const ford = 600;
 const audi = 900;
 const bmw = 1200;
 const base = 900;
+const discount = 0.02;
 let fecha = new Date();
 let ano = fecha.getFullYear();
 
@@ -483,8 +484,8 @@ const obtainBaseCost = (e) => {
 selMake.addEventListener("change", obtainBaseCost)
 
 
-function costCalculator (captureYear, obtainBaseCost) {        
-        let discount = 0;
+function costCalculator (captureYear, obtainBaseCost) {                
+        let totalDiscount = 0;
         let yearCounter = 0;
         let finalCost;      
         console.log(`Año actual: ${ano}`)
@@ -493,14 +494,14 @@ function costCalculator (captureYear, obtainBaseCost) {
                 finalCost = baseCost;
         } else {                
                 for (let i = ano; i > chosenYear ; i--) {
-                        yearCounter = yearCounter + 1;
-                        discount = discount + 0.02;       
-                }               
-        }
-        finalCost = baseCost * (1 - discount)
+                        yearCounter += 1;
+                        totalDiscount = discount * yearCounter;       
+                } 
+                finalCost = baseCost * (1 - totalDiscount)              
+        }        
         selCost.value = `$${finalCost}` 
         console.log(`Años de antigüedad: ${yearCounter}`)
-        console.log(`Total de descuento: ${discount}%`);
+        console.log(`Total de descuento: ${totalDiscount}%`);
         console.log(`Costo del seguro: $${finalCost}`)                
 }
 selCost.addEventListener("focus", costCalculator)
