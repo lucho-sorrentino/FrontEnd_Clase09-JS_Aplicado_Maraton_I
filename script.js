@@ -1,6 +1,6 @@
         // ··········· MARATON I JS Aplicado ···········
 
-        // ***********Ejericicio 01 ***********
+        // *********** Ejericicio 01 ***********
 // La NASA nos pidió un programa que calcule la edad de las personas en sus planetas favoritos. Para eso necesitamos una web (sencilla!!) donde solicitaremos mediante un input y un select al usuario, su edad en la tierra y su planeta favorito. Luego, mostrarle en un tercer input o en un párrafo en el html, su edad correspondiente al planeta que eligió.
 // Días que tardan en dar la vuelta al sol:
 // Mercurio: 87.97
@@ -61,7 +61,7 @@
 
 
 
-        // ***********Ejericicio 02 ***********
+        // *********** Ejericicio 02 ***********
 // Un vivero nos pide armar un sistema que ayude a las personas a decidir qué tipo de planta colocar en su jardín según la flor que quieran. Para eso, les daremos diferentes opciones (mediante un select, o mediante botones), para que puedan elegir varios tipos de flor. Al elegir una flor, se debe mostrar su imagen. Cuando se le pase el mouse por encima a esa imagen, debe mostrar como se ve el árbol de dicha flor.
 
 //  const selector = document.querySelector("#selectTree")
@@ -99,7 +99,7 @@
 
 
 
-//         ***********Ejericicio 03/ ***********
+//         *********** Ejericicio 03 ***********
 // En un juego de mesa, necesitan implementar un sistema de puntos que sea justo para decidir quién arranca. Para esto, cada jugador tirará 4 veces el dado (del 1 al 6). Luego, se hará la suma de los 4 dados. Quien haya sacado más puntuación será quien inicie el juego. Nota: A los jugadores se los ha identificado con “jugador 1, 2, etc…” Según el órden en el cuál tiraron. 
 
 // Math.floor((Math.random() * 100) + 1);
@@ -169,7 +169,7 @@
 
 
 
-//         ***********Ejericicio 04/ ***********
+//         *********** Ejericicio 04 ***********
 // Una escuela de tango necesita organizar las inscripciones de sus alumnos.
 // Alumnos:
 
@@ -223,7 +223,7 @@
 
 
 
-//         ***********Ejericicio 05/ ***********
+//         *********** Ejericicio 05 ***********
 // La AFA está realizando un concurso para ganarte una pelota firmada por Messi.
 // Se le solicita a las personas que completen:
 // 1.- Nombre: mínimo 3 y máximo 16 dígitos.
@@ -327,7 +327,7 @@
 
 
 
-//         ***********Ejericicio 06/ ***********
+//         *********** Ejericicio 06 ***********
 // Papá Noel recibió una cantidad enorme de cartitas este año, por lo que no tuvo tiempo de decidir quienes habían sido buenos o malos, así que decidió armar un sistema de clasificación automático. Si el niño o niña pidió 3 o más de los siguientes objetos, será catalogado como “malo” y se le entregará carbón en navidad. Si pidió 2 o menos, entonces será catalogado como bueno. Los objetos que suman son:
 // * Bicicleta, hermano/a/e, playstation, medias, mochila, piano*.
 // -Para probar: Generar algún set de pruebas. Pueden usar objetos y/o arreglos. 
@@ -378,7 +378,7 @@
 
 
 
-//         ***********Ejericicio 07/ ***********
+//         *********** Ejericicio 07 ***********
 // Organizar asados es una tarea difícil cuando se trata de calcular la cantidad de comida y repartir los costos. Para eso, un grupo de amigos nos solicita que realicemos un programa que nos ayude a dividir la tarea. 
 // Se calcula: 500gr de carne por persona. 1 Botella de cerveza por persona. 1 kilo de helado cada 4 personas. En caso de quedar por ejemplo: 1 kilo y medio, redondear siempre para arriba, es decir a dos kilos. 
 // El programa debe recibir como dato la cantidad de comensales y debe devolver: Cantidad de carne, cervezas y helado para comprar, costo total y costo por persona. 
@@ -391,42 +391,119 @@
 // - Precio total: $1750 de carne + $1000 de cervezas, $1200 de helado. Total: $3950. 
 // - Precio por persona: $790.
 
-const costoCarne = 700;
-const costoCerveza = 200;
-const costoHelado = 600;
+// const costoCarne = 700;
+// const costoCerveza = 200;
+// const costoHelado = 600;
 
-const consumoCarne = 0.5;
-const consumoCerveza = 1;
-const consumoHelado = 0.25;
+// const consumoCarne = 0.5;
+// const consumoCerveza = 1;
+// const consumoHelado = 0.25;
 
-const selCarne = document.querySelector("#meat");
-const selCerveza = document.querySelector("#beer");
-const selHelado = document.querySelector("#icecream");
-const selector = document.querySelector("#selQuantity");
-const selCostoParcial = document.querySelector("#individualCost");
-const selCostoTotal = document.querySelector("#totalCost")
+// const selCarne = document.querySelector("#meat");
+// const selCerveza = document.querySelector("#beer");
+// const selHelado = document.querySelector("#icecream");
+// const selector = document.querySelector("#selQuantity");
+// const selCostoParcial = document.querySelector("#individualCost");
+// const selCostoTotal = document.querySelector("#totalCost")
 
-const calcularConsumo = () => {
-        let cantPersonas = selector.value;
-        console.log(cantPersonas)
-        let cantCarne = consumoCarne * cantPersonas;
-        let cantCerveza = consumoCerveza * cantPersonas;
-        let cantHelado = Math.ceil( consumoHelado * cantPersonas );
-        selCarne.value = cantCarne;
-        selCerveza.value = cantCerveza;
-        selHelado.value = cantHelado;
-        calcularCosto(cantCarne, cantCerveza, cantHelado, cantPersonas)
+// const calcularConsumo = () => {
+//         let cantPersonas = selector.value;        
+//         let cantCarne = consumoCarne * cantPersonas;
+//         let cantCerveza = consumoCerveza * cantPersonas;
+//         let cantHelado = Math.ceil( consumoHelado * cantPersonas );
+//         selCarne.value = cantCarne;
+//         selCerveza.value = cantCerveza;
+//         selHelado.value = cantHelado;
+//         calcularCosto(cantCarne, cantCerveza, cantHelado, cantPersonas)
+// }
+// selector.addEventListener("change", calcularConsumo);
+
+// const calcularCosto = (item1, item2, item3, quantity) => {
+//         let costoTotal = (item1 * costoCarne) + (item2 * costoCerveza) + (item3 * costoHelado)
+//         let costoParcial = costoTotal / quantity;
+//         selCostoParcial.value = costoParcial;
+//         selCostoTotal.value = costoTotal;
+// }
+
+
+
+
+
+
+//         *********** Ejericicio 08 ***********
+// Una tienda de sombreros nos requiere para su web agregar un carrito de compras que se mantenga cuando la persona entra o sale del sitio. (guiñoguiñolocalstorageguiñoguiño) .
+// Para eso le mostraremos al usuario 5 sombreros con su respectivo nombre, foto y precio. Dentro del carro cada uno tendrá una cantidad. Por defecto todos estarán en 0. Cada uno tendrá un botón de sumar y otro de restar. No se podrá tener una cantidad menor a 0 de sombreros. El tope máximo son 3 sombreros por tipo. Cuando llega al tope de sombreros, se debe mostrar toda la info del sombrero con un recuadro rojo.
+// En la parte inferior se verá el precio total de los sombreros solicitados.
+
+
+
+
+
+
+
+
+//         *********** Ejericicio 09 ***********
+// De Guayerd Seguros nos piden que hagamos un cotizador de seguros de auto. Para eso debemos informar el modelo de auto y el año de fabricación. Cada modelo tendrá un costo fijo y bajará 2% por año de antigüedad. Tendrá como base un costo de $900 + el valor por cada modelo. (Poner 3 modelos como opción!).
+
+const selYear = document.querySelector("#year");
+const selMake = document.querySelector("#make");
+const selCost = document.querySelector("#cost");
+const ford = 600;
+const audi = 900;
+const bmw = 1200;
+const base = 900;
+let fecha = new Date();
+let ano = fecha.getFullYear();
+
+const populateYears = () => {        
+        for (let i = ano; i >= 1970; i--) {
+                selYear.innerHTML += `<option value="${i}"> ${i} </option>`
+        }
 }
-selector.addEventListener("change", calcularConsumo);
+populateYears()
 
-const calcularCosto = (item1, item2, item3, quantity) => {
-        let costoTotal = (item1 * costoCarne) + (item2 * costoCerveza) + (item3 * costoHelado)
-        let costoParcial = costoTotal / quantity;
-        selCostoParcial.value = costoParcial;
-        selCostoTotal.value = costoTotal;
+
+const captureYear = (e) => {
+        chosenYear = parseInt(e.target.value);                 
 }
+selYear.addEventListener("change", captureYear)
 
 
+const obtainBaseCost = (e) => {
+        let chosenMake = e.target.value        
+        if (chosenMake === "ford") {
+                baseCost = ford + base; 
+        } else if (chosenMake === "audi") {
+                baseCost = audi + base;
+        } else if (chosenMake === "bmw") {
+                baseCost = base + bmw;
+        }
+        console.log(`Costo base del seguro: $${baseCost}`);        
+}
+selMake.addEventListener("change", obtainBaseCost)
+
+
+function costCalculator (captureYear, obtainBaseCost) {        
+        let discount = 0;
+        let yearCounter = 0;
+        let finalCost;      
+        console.log(`Año actual: ${ano}`)
+        console.log(`Año seleccionado: ${chosenYear}`)
+        if (chosenYear === ano) {
+                finalCost = baseCost;
+        } else {                
+                for (let i = ano; i > chosenYear ; i--) {
+                        yearCounter = yearCounter + 1;
+                        discount = discount + 0.02;       
+                }               
+        }
+        finalCost = baseCost * (1 - discount)
+        selCost.value = `$${finalCost}` 
+        console.log(`Años de antigüedad: ${yearCounter}`)
+        console.log(`Total de descuento: ${discount}%`);
+        console.log(`Costo del seguro: $${finalCost}`)                
+}
+selCost.addEventListener("focus", costCalculator)
 
 
 
