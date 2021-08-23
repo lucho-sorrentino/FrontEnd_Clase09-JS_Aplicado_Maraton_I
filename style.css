@@ -3,20 +3,21 @@ body {
     color: blanchedalmond;
 }
 
-/* body > * * {
+body > * * {
     border: solid 1px red;
-} */
+    margin: 4px;;
+}
  
-input {
+/* input {
     border: 2px solid;
     border-radius: 4px;
     margin: 0.25rem;
     min-width: 125px;
     padding: 0.5rem;
-}
+} */
 
 label {    
-    width:200px;
+    /* width:200px; */
     display: inline-block;    
 }
 
@@ -50,4 +51,11 @@ label {
     display: flex;    
     justify-content:space-evenly;
     align-items: center;
+}
+
+.hatsContainer {
+    border: solid 1px greenyellow;
+    width: 80%;
+    margin: auto;
+    display: flex;
 }

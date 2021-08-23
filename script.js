@@ -332,6 +332,8 @@
 // * Bicicleta, hermano/a/e, playstation, medias, mochila, piano*.
 // -Para probar: Generar algún set de pruebas. Pueden usar objetos y/o arreglos. 
 
+                //PENDIENTE!!!!
+
 // let regalosSuman = ["bicicleta", "hermano", "playstation", "medias", "mochila", "piano"];
 
 // const cartas = [
@@ -431,9 +433,38 @@
 
 
 //         *********** Ejericicio 08 ***********
-// Una tienda de sombreros nos requiere para su web agregar un carrito de compras que se mantenga cuando la persona entra o sale del sitio. (guiñoguiñolocalstorageguiñoguiño) .
+// Una tienda de sombreros nos requiere para su web agregar un carrito de compras que se mantenga cuando la persona entra o sale del sitio. (guiñoguiñolocalstorageguiñoguiño).
 // Para eso le mostraremos al usuario 5 sombreros con su respectivo nombre, foto y precio. Dentro del carro cada uno tendrá una cantidad. Por defecto todos estarán en 0. Cada uno tendrá un botón de sumar y otro de restar. No se podrá tener una cantidad menor a 0 de sombreros. El tope máximo son 3 sombreros por tipo. Cuando llega al tope de sombreros, se debe mostrar toda la info del sombrero con un recuadro rojo.
 // En la parte inferior se verá el precio total de los sombreros solicitados.
+
+const priceList = {
+                "precioModelo1" : 200,       
+                "precioModelo2" : 250,       
+                "precioModelo3" : 350,
+                "precioModelo4" : 300,        
+                "precioModelo5" : 500
+}
+
+// let priceList = {}
+
+const selPrice1 = document.querySelector("#price1")
+const selPrice2 = document.querySelector("#price2")
+const selPrice3 = document.querySelector("#price3")
+const selPrice4 = document.querySelector("#price4")
+const selPrice5 = document.querySelector("#price5")
+
+function populatePriceList(object)  {
+        for (let i = 1; i <= 1; i++ ) {                
+                let precio = priceList.precioModelo[i];
+                console.log(precio)    
+                selPrice1.innerHTML = `Precio $${precio}`                 
+        }
+}
+        
+
+populatePriceList(priceList)
+
+
 
 
 
@@ -445,66 +476,66 @@
 //         *********** Ejericicio 09 ***********
 // De Guayerd Seguros nos piden que hagamos un cotizador de seguros de auto. Para eso debemos informar el modelo de auto y el año de fabricación. Cada modelo tendrá un costo fijo y bajará 2% por año de antigüedad. Tendrá como base un costo de $900 + el valor por cada modelo. (Poner 3 modelos como opción!).
 
-const selYear = document.querySelector("#year");
-const selMake = document.querySelector("#make");
-const selCost = document.querySelector("#cost");
-const ford = 600;
-const audi = 900;
-const bmw = 1200;
-const base = 900;
-const discount = 0.02;
-let date = new Date();
-let year = date.getFullYear();
+// const selYear = document.querySelector("#year");
+// const selMake = document.querySelector("#make");
+// const selCost = document.querySelector("#cost");
+// const ford = 600;
+// const audi = 900;
+// const bmw = 1200;
+// const base = 900;
+// const discount = 0.02;
+// let date = new Date();
+// let year = date.getFullYear();
 
-const populateYears = () => {        
-        for (let i = year; i >= 1970; i--) {
-                selYear.innerHTML += `<option value="${i}"> ${i} </option>`
-        }
-}
-populateYears()
-
-
-const captureYear = (e) => {
-        chosenYear = parseInt(e.target.value);                 
-}
-selYear.addEventListener("change", captureYear)
+// const populateYears = () => {        
+//         for (let i = year; i >= 1970; i--) {
+//                 selYear.innerHTML += `<option value="${i}"> ${i} </option>`
+//         }
+// }
+// populateYears()
 
 
-const obtainBaseCost = (e) => {
-        let chosenMake = e.target.value        
-        if (chosenMake === "ford") {
-                baseCost = ford + base; 
-        } else if (chosenMake === "audi") {
-                baseCost = audi + base;
-        } else if (chosenMake === "bmw") {
-                baseCost = base + bmw;
-        }
-        console.log(`Costo base del seguro: $${baseCost}`);        
-}
-selMake.addEventListener("change", obtainBaseCost)
+// const captureYear = (e) => {
+//         chosenYear = parseInt(e.target.value);                 
+// }
+// selYear.addEventListener("change", captureYear)
 
 
-function costCalculator (captureYear, obtainBaseCost) {                
-        let totalDiscount = 0;
-        let yearCounter = 0;
-        let finalCost;      
-        console.log(`Año actual: ${year}`)
-        console.log(`Año seleccionado: ${chosenYear}`)
-        if (chosenYear === year) {
-                finalCost = baseCost;
-        } else {                
-                for (let i = year; i > chosenYear ; i--) {
-                        yearCounter += 1;
-                        totalDiscount = discount * yearCounter;       
-                } 
-                finalCost = baseCost * (1 - totalDiscount)              
-        }        
-        selCost.value = `$${finalCost}` 
-        console.log(`Años de antigüedad: ${yearCounter}`)
-        console.log(`Total de descuento: ${totalDiscount}%`);
-        console.log(`Costo del seguro: $${finalCost}`)                
-}
-selCost.addEventListener("focus", costCalculator)
+// const obtainBaseCost = (e) => {
+//         let chosenMake = e.target.value        
+//         if (chosenMake === "ford") {
+//                 baseCost = ford + base; 
+//         } else if (chosenMake === "audi") {
+//                 baseCost = audi + base;
+//         } else if (chosenMake === "bmw") {
+//                 baseCost = base + bmw;
+//         }
+//         console.log(`Costo base del seguro: $${baseCost}`);        
+// }
+// selMake.addEventListener("change", obtainBaseCost)
+
+
+// function costCalculator (captureYear, obtainBaseCost) {                
+//         let totalDiscount = 0;
+//         let yearCounter = 0;
+//         let finalCost;      
+//         console.log(`Año actual: ${year}`)
+//         console.log(`Año seleccionado: ${chosenYear}`)
+//         if (chosenYear === year) {
+//                 finalCost = baseCost;
+//         } else {                
+//                 for (let i = year; i > chosenYear ; i--) {
+//                         yearCounter += 1;
+//                         totalDiscount = discount * yearCounter;       
+//                 } 
+//                 finalCost = baseCost * (1 - totalDiscount)              
+//         }        
+//         selCost.value = `$${finalCost}` 
+//         console.log(`Años de antigüedad: ${yearCounter}`)
+//         console.log(`Total de descuento: ${totalDiscount}%`);
+//         console.log(`Costo del seguro: $${finalCost}`)                
+// }
+// selCost.addEventListener("focus", costCalculator)
 
 
 
